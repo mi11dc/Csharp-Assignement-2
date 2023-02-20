@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome to J1</h2>
+
+<form method="POST" action="J1/GetPoints">
+    <div>
+        <label for="pckDelivered">No of Package delivered: </label>
+        <input type="number" id="pckDelivered" name="NoofPckgDelivered" min="0" />
+    </div>
+
+    <div>
+        <label for="obstical">No of Obsticals: </label>
+        <input type="number" id="obstical" name="NoofObsticals" min="0" />
+    </div>
+
+    <button type="submit">Submit</button>
+</form>

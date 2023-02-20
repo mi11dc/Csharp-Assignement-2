@@ -1,0 +1,32 @@
+﻿@model Assignment_2.Models.J2Class
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome to J2</h2>
+
+@if (Model.TotalNoofPeppers == 0)
+{
+    <form name="addTotals" method="GET">
+        <div>
+            <label for="noofPeppers">Total No of Peppers: </label>
+            <input type="number" id="noofPeppers" name="TotalNoofPeppers" min="0" />
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+}
+
+@if (Model.TotalNoofPeppers > 0)
+{
+    <form name="addPeppers" method="POST" action="J2/GetPoints">
+        @for (var i = 1; i <= Model.TotalNoofPeppers; i++) {
+            <div>
+                <label for="pepper-@i">Papper @i: </label>
+                <input type="text" id="pepper-@i" name="LstPeppers" required />
+            </div>
+        }
+
+        <button type="submit">Submit</button>
+    </form>
+}
