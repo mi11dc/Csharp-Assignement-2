@@ -18,9 +18,10 @@ namespace Assignment_2.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetPoints(int totalPoints)
+        public ActionResult GetPoints(int totalPoints, int totalCount)
         {
             ViewData["points"] = totalPoints;
+            ViewData["counts"] = totalCount;
             return View();
         }
 
@@ -28,7 +29,7 @@ namespace Assignment_2.Controllers
         public ActionResult GetPoints(J2Class j2Class)
         {
             int totalPoints = j2Class.TotalSHUValues(j2Class);
-            return RedirectToAction("GetPoints", "J2", new { totalPoints });
+            return RedirectToAction("GetPoints", "J2", new { totalPoints, totalCount = j2Class.LstPeppers.Count });
         }
     }
 }
