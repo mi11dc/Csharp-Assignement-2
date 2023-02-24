@@ -1,8 +1,15 @@
-﻿
+﻿@model Assignment_2.Models.J2Class
 @{
     ViewBag.Title = "GetPoints";
 }
 
-<h2>Total Points: @ViewData["points"]</h2>
+@if (!String.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <h2>Error: @Model.ErrorMessage</h2>
+}
+else
+{
+    <h2>Total SHU value: @Model.TotalSHU</h2>
 
-<h2>Number of Peppers: @ViewData["counts"]</h2>
+    <h3>Number of Peppers: @Model.TotalNoofPeppers</h3>
+}

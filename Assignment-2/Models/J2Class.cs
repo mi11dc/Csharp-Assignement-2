@@ -10,11 +10,13 @@ namespace Assignment_2.Models
         public int TotalNoofPeppers { get; set; }
 
         public List<string> LstPeppers { get; set; }
+        public int TotalSHU { get; set; }
+        public string ErrorMessage { get; set; }
 
-        public int TotalSHUValues(J2Class j2Class)
+        public J2Class getTotalSHU(J2Class j2Class)
         {
             Pepper pepper = new Pepper();
-            int totalPoints = 0;
+            j2Class.TotalSHU = 0;
             for (var i = 0; i < j2Class.LstPeppers.Count; i++)
             {
                 Pepper pepperObj = pepper.GetPeppers().Find(x => x.Name == j2Class.LstPeppers[i]);
@@ -25,12 +27,12 @@ namespace Assignment_2.Models
                 {
                     if (j2Class.LstPeppers[i].Trim() == pepperObj.Name.Trim())
                     {
-                        totalPoints += pepperObj.Value;
+                        j2Class.TotalSHU += pepperObj.Value;
                     }
                 }
             }
 
-            return totalPoints;
+            return j2Class;
         }
     }
 }

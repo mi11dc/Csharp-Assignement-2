@@ -9,6 +9,7 @@ namespace Assignment_2.Models
     {
         public int NoofPckgDelivered { get; set; }
         public int NoofObsticals { get; set; }
+        public int TotalPoints { get; set; }
 
         public int DeliveryObsticalPoints(J1Class j1Class)
         {

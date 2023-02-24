@@ -192,12 +192,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\J1Controller.cs" />
     <Compile Include="Controllers\J2Controller.cs" />
+    <Compile Include="Controllers\J3Controller.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DaysAvailibilityClass.cs" />
     <Compile Include="Models\J1Class.cs" />
     <Compile Include="Models\J2Class.cs" />
+    <Compile Include="Models\J3Class.cs" />
     <Compile Include="Models\Pepper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -255,6 +258,8 @@
     <Content Include="Views\J1\GetPoints.cshtml" />
     <Content Include="Views\J2\Index.cshtml" />
     <Content Include="Views\J2\GetPoints.cshtml" />
+    <Content Include="Views\J3\GetAvailableDays.cshtml" />
+    <Content Include="Views\J3\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -22,22 +22,11 @@ namespace Assignment_2.Controllers
             return View();
         }
 
-        // GET: J1/GetPoints
-        [HttpGet]
-        public ActionResult GetPoints(int totalPoints)
-        {
-            //J1Class j1Class = new J1Class();
-            //ViewData["points"] = j1Class.DeliveryObsticalPoints(j1Class.NoofPckgDelivered, j1Class.NoofObsticals);
-            ViewData["points"] = totalPoints;
-            return View();
-        }
-
         [HttpPost]
         public ActionResult GetPoints(J1Class j1Class)
         {
-            int totalPoints = j1Class.DeliveryObsticalPoints(j1Class);
-            return RedirectToAction("GetPoints", "J1", new { totalPoints });
-            // return View(new { totalPoints });
+            j1Class.TotalPoints = j1Class.DeliveryObsticalPoints(j1Class);
+            return View(j1Class);
         }
     }
 }

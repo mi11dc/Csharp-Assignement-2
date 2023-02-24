@@ -1,0 +1,14 @@
+﻿@model Assignment_2.Models.J3Class
+@{
+    ViewBag.Title = "GetAvailableDays";
+}
+
+@if (!String.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <h2>Error: @Model.ErrorMessage</h2>
+}
+else 
+{
+    <h2>GetAvailableDays: @Model.SuggestedEventDay</h2>
+}
+

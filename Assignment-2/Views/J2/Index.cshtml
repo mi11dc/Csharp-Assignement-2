@@ -5,21 +5,27 @@
 
 <h2>Welcome to J2</h2>
 
-@if (Model.TotalNoofPeppers == 0)
-{
-    <form name="addTotals" method="GET">
-        <div>
-            <label for="noofPeppers">Total No of Peppers: </label>
-            <input type="number" id="noofPeppers" name="TotalNoofPeppers" min="0" />
-        </div>
 
+<form name="addTotals" method="GET">
+    <div>
+        <label for="noofPeppers">Total No of Peppers: </label>
+        <input type="number" id="noofPeppers" name="TotalNoofPeppers" min="1" value="@Model.TotalNoofPeppers"/>
+    </div>
+    @if (Model.TotalNoofPeppers == 0)
+    {
         <button type="submit">Submit</button>
-    </form>
-}
+    }
+</form>
 
 @if (Model.TotalNoofPeppers > 0)
 {
-    <form name="addPeppers" method="POST" action="J2/GetPoints">
+    <hr />
+    <p>
+        Please select your peppers from Poblano, Mirasol, Serrano, Cayenne, Thai and Habanero.
+    </p>
+
+    <form name="addPeppers" method="POST" action="/J2/GetPoints">
+        <input type="hidden" id="noofPeppers" name="TotalNoofPeppers" value="@Model.TotalNoofPeppers" />
         @for (var i = 1; i <= Model.TotalNoofPeppers; i++) {
             <div>
                 <label for="pepper-@i">Papper @i: </label>

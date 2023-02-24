@@ -10,26 +10,22 @@ namespace Assignment_2.Controllers
     public class J2Controller : Controller
     {
         // GET: J2/Index
-        public ActionResult Index(int TotalNoofPeppers = 0)
+        public ActionResult Index(J2Class j2Class)
         {
-            J2Class model = new J2Class();
-            model.TotalNoofPeppers = TotalNoofPeppers;
-            return View(model);
-        }
-
-        [HttpGet]
-        public ActionResult GetPoints(int totalPoints, int totalCount)
-        {
-            ViewData["points"] = totalPoints;
-            ViewData["counts"] = totalCount;
-            return View();
+            j2Class.TotalNoofPeppers = (j2Class.TotalNoofPeppers > 0) ? j2Class.TotalNoofPeppers : 1;
+            return View(j2Class);
         }
 
         [HttpPost]
         public ActionResult GetPoints(J2Class j2Class)
         {
-            int totalPoints = j2Class.TotalSHUValues(j2Class);
-            return RedirectToAction("GetPoints", "J2", new { totalPoints, totalCount = j2Class.LstPeppers.Count });
+            if (!j2Class.TotalNoofPeppers.Equals(j2Class.LstPeppers.Count))
+            {
+                j2Class.ErrorMessage = "Oppps!! Something went wrong...";
+                return View(j2Class);
+            }
+            j2Class = j2Class.getTotalSHU(j2Class);
+            return View(j2Class);
         }
     }
 }
