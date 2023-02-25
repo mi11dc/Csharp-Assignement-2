@@ -17,6 +17,15 @@ namespace Assignment_2.Controllers
         //    return View(j3Class);
         //}
 
+        /// <summary>
+        /// This J3 problem is from Mathematics and Computing Contests CCC 2023 Problems and Tests
+        /// https://cemc.math.uwaterloo.ca/contests/computing/past_ccc_contests/2023/ccc/juniorEF.pdf
+        /// </summary>
+        /// <param name="j3Class">
+        ///     J3Class contains NoofPeople, SuggestedEventDay, ErrorMessage and Availibilities.
+        ///     Also, it contains GetAvailableDays, IsAvailableOnDay and GetAllIndexes methods.
+        /// </param>
+        /// <returns>returns J3Class with ErrorMessage or SuggestedEventDay</returns>
         [HttpPost]
         public J3Class GetAvailableDays(J3Class j3Class)
         {

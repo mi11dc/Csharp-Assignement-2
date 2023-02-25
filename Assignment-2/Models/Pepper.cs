@@ -10,6 +10,10 @@ namespace Assignment_2.Models
         public string Name { get; set; }
         public int Value { get; set; }
 
+        /// <summary>
+        /// Returns static names of every peppers from list and their values.
+        /// </summary>
+        /// <returns>List of peppers with name and Value</returns>
         public List<Pepper> GetPeppers()
         {
             return new List<Pepper>()

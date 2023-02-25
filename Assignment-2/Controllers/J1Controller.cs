@@ -15,13 +15,22 @@ namespace Assignment_2.Controllers
         /// This J1 problem is from Mathematics and Computing Contests CCC 2023 Problems and Tests
         /// https://cemc.math.uwaterloo.ca/contests/computing/past_ccc_contests/2023/ccc/juniorEF.pdf
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Index Page</returns>
         // GET: J1/index
         public ActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// This J1 problem is from Mathematics and Computing Contests CCC 2023 Problems and Tests
+        /// https://cemc.math.uwaterloo.ca/contests/computing/past_ccc_contests/2023/ccc/juniorEF.pdf
+        /// </summary>
+        /// <param name="j1Class">
+        ///     J1 class contains NoofPckgDelivered, NoofObsticals and TotalPoints. 
+        ///     Also contain DeliveryObsticalPoints function which returns totalpoint. 
+        /// </param>
+        /// <returns>Go to GetPoints Page</returns>
         [HttpPost]
         public ActionResult GetPoints(J1Class j1Class)
         {
